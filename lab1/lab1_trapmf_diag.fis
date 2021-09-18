@@ -1,0 +1,56 @@
+[System]
+Name='lab1_trapmf_diag'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[0 1]
+NumMFs=6
+MF1='mx1':'gaussmf',[0.08493 1.041e-17]
+MF2='mx2':'gaussmf',[0.08493 0.2]
+MF3='mx3':'gaussmf',[0.08493 0.4]
+MF4='mx4':'gaussmf',[0.08493 0.6]
+MF5='mx5':'gaussmf',[0.08493 0.8]
+MF6='mx6':'gaussmf',[0.08493 1]
+
+[Input2]
+Name='y'
+Range=[0 1]
+NumMFs=6
+MF1='my1':'gaussmf',[0.08493 1.041e-17]
+MF2='my2':'gaussmf',[0.08493 0.2]
+MF3='my3':'gaussmf',[0.08493 0.4]
+MF4='my4':'gaussmf',[0.08493 0.6]
+MF5='my5':'gaussmf',[0.08493 0.8]
+MF6='my6':'gaussmf',[0.08493 1]
+
+[Output1]
+Name='f'
+Range=[0 1]
+NumMFs=9
+MF1='mf1':'gaussmf',[0.05308 3.469e-18]
+MF2='mf2':'gaussmf',[0.05308 0.125]
+MF3='mf3':'gaussmf',[0.05308 0.25]
+MF4='mf4':'gaussmf',[0.05308 0.375]
+MF5='mf5':'gaussmf',[0.05308 0.5]
+MF6='mf6':'gaussmf',[0.05308 0.625]
+MF7='mf7':'gaussmf',[0.05308 0.75]
+MF8='mf8':'gaussmf',[0.05308 0.875]
+MF9='mf9':'trimf',[0.868857505285412 0.993457505285412 1.11865750528541]
+
+[Rules]
+1 1, 1 (1) : 1
+2 2, 1 (1) : 1
+3 3, 2 (1) : 1
+4 4, 4 (1) : 1
+5 5, 6 (1) : 1
+6 6, 8 (1) : 1
