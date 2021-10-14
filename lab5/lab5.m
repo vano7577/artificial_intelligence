@@ -23,28 +23,7 @@ O = [1 0 0 0;
     0 1 0 0;
     0 0 1 0;
     0 0 0 1];
-P = [0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1;
-    0 1];
-T= [0 1;
-    0 1;
-    0 1;
-    0 1];
-
-net=newp(P,T,'hardlim','learnp');
+net=perceptron;
 net.trainParam.epochs = 5000;
 net = train(net,I,O);
 X=[1 1 0 1;
@@ -64,7 +43,6 @@ X=[1 1 0 1;
     0 0 1 1;
     1 0 0 1];
 Y1 = net(X);
-
 for i = 1:4
     if Y1(1,i) ==1 && Y1(2,i)==0 && Y1(3,i)==0 && Y1(4,i)==0
         disp(['element',num2str(i), ' is И'])
